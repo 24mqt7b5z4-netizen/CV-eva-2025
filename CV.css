@@ -1,0 +1,1458 @@
+body {
+    background: linear-gradient(135deg, #f3efee 0%, #efeee9 100%);
+    display: flex;
+    flex-direction: column;
+    min-height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+main {
+    margin-top: 350px;
+    flex: 1;
+}
+
+/* Style du header sans scroller*/
+header.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.875rem 1.5rem;
+    /* Plus de padding au début */
+    background: transparent;
+    /* Transparent au début */
+    box-shadow: none;
+    /* Pas d'ombre au début */
+    transition: all 0.4s ease;
+    z-index: 100;
+}
+
+/* Style du header quand on scrolle */
+header.header.scrolled {
+    padding: 0.75rem 1.5rem;
+    /* Réduit quand on scroll */
+    background: linear-gradient(135deg, #f3efee 0%, #efeee9 100%);
+    /* Devient opaque */
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+    /* Ajoute une ombre */
+}
+
+/* Style du titre */
+header.header h1 {
+    font-family: "Didot", "Didot LT STD", "Hoefler Text", "Garamond", "Times New Roman", serif;
+    /* famille de polices au cas où */
+    font-weight: bold;
+    margin: 0.0625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    text-align: center;
+    font-size: 12.5rem;
+    color: #1b4ea0;
+    padding: 0.625rem 0 0 0;
+    transition: font-size 0.4s ease;
+    margin: 0;
+}
+
+/* Réduction de la taille du titre lors du scroll */
+header.header.scrolled h1 {
+    font-size: 1.8rem;
+    /* Le titre rétrécit aussi */
+}
+
+/* Réduction de la taille de la nav lors du scroll */
+header.header nav {
+    transition: all 0.4s ease;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 7.5rem;
+}
+
+/* Partie Navigation */
+
+nav a:hover {
+    transform: translateY(-0.125rem);
+    box-shadow: 0 0.5rem 1rem rgba(59, 130, 246, 0.4);
+}
+
+/* Effet bouton */
+.btn-hover:active {
+    transform: translateY(0);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #1b4ea0;
+    font-family: Bodoni MT, Didot, serif;
+
+}
+
+.titres {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Didot, serif;
+
+}
+
+.titre1 {
+    text-align: left;
+    font-size: 3.75rem;
+    color: #000000;
+    margin: 0;
+    margin-left: 1.25rem;
+    padding-bottom: 1.875rem;
+    padding-left: 2.1875rem;
+    padding-top: 1.25rem;
+    align-self: flex-start;
+}
+
+.titre2 {
+    text-align: right;
+    font-size: 2.5rem;
+    color: #000000;
+    margin: 0;
+    padding-right: 6.25rem;
+    margin-top: -5.625rem;
+    align-self: flex-end;
+}
+
+/* Partie image code barre */
+.codeBarre {
+    width: 21.875rem;
+    height: auto;
+    margin-top: 3.125rem;
+    padding-bottom: 5rem;
+    margin-left: auto;
+    margin-right: -0.1875rem;
+    flex-basis: 100%;
+    display: block;
+}
+
+/* Partie Footer */
+footer {
+    color: #f3efee(27, 78, 160, 0.8);
+    text-align: center;
+    margin-top: auto;
+    padding: 1.25rem;
+    display: flex;
+    justify-content: space-around;
+    gap: 2.5rem;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%;
+    /* Effet dégradé animé */
+    background: linear-gradient(45deg,
+            #3b82f6,
+            #1b4ea0,
+            #b7ccf4,
+            #497ac8,
+            #0153d7);
+    background-size: 400% 400%;
+    animation: gradientShift 8s ease infinite;
+}
+
+@keyframes gradientShift {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+
+/* Partie Présentation */
+
+.présentation {
+    scroll-margin-top: 350px;
+    font-size: 20px;
+    color: #000000;
+    font-family: "Garamond", "Georgia", serif;
+    line-height: 1.8;
+    margin: 100px auto 0;
+    max-width: 800px;
+    padding-bottom: 50px;
+
+    h2 {
+        font-family: Didot, "Didot LT STD", serif;
+        font-size: 35px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #1b4ea0;
+        border-bottom: 2px solid rgba(27, 78, 160, 0.08);
+    }
+}
+
+.journal-quote {
+    position: relative;
+    padding: 1.25rem 1rem;
+    margin: 1.25rem 0;
+    font-size: clamp(18px, 1.6vw, 20px);
+    line-height: 1.7;
+}
+
+.journal-quote p {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+}
+
+.journal-quote::before {
+    position: absolute;
+    content: "\201C";
+    top: -36px;
+    left: -60px;
+    font-size: clamp(48px, 10vw, 140px);
+    line-height: 1;
+    color: rgba(27, 78, 160, 0.40);
+    font-family: Georgia, "Times New Roman", serif;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.journal-quote::after {
+    position: absolute;
+    content: "\201D";
+    bottom: -18px;
+    right: -12px;
+    font-size: clamp(32px, 6vw, 80px);
+    line-height: 1;
+    transform: translateY(8%);
+    opacity: 0.9;
+    color: rgba(27, 78, 160, 0.40);
+    font-family: Georgia, "Times New Roman", serif;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Partie Formation */
+.formations-vogue {
+    scroll-margin-top: 350px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 40px;
+}
+
+.formations-vogue h2 {
+    font-family: Didot, "Didot LT STD", serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1b4ea0;
+    margin: 0 0 60px 0;
+    font-weight: normal;
+    border-bottom: 2px solid rgba(27, 78, 160, 0.08);
+    padding-bottom: 20px;
+}
+
+.formation-timeline {
+    position: relative;
+    padding-left: 80px;
+}
+
+/* Ligne verticale */
+.formation-timeline::before {
+    content: "";
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #1b4ea0, rgba(27, 78, 160, 0.1));
+}
+
+.timeline-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    gap: 40px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Marqueur circulaire */
+.timeline-marker {
+    position: absolute;
+    left: -53px;
+    top: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #1b4ea0;
+    box-shadow: 0 0 0 6px rgba(27, 78, 160, 0.08);
+}
+
+.timeline-content {
+    flex: 1;
+    background: #ffffff;
+    padding: 24px 28px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 200ms ease;
+}
+
+.timeline-item:hover .timeline-content {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+.formation-year {
+    font-family: Didot, serif;
+    font-size: 13px;
+    color: rgba(27, 78, 160, 0.8);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    font-weight: normal;
+}
+
+.formation-title {
+    font-family: Didot, serif;
+    font-size: 22px;
+    color: #000;
+    margin: 0 0 10px 0;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+.formation-details {
+    font-family: Georgia, serif;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.65);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(27, 78, 160, 0.06);
+    padding: 4px 10px;
+    border-radius: 3px;
+    font-weight: 600;
+}
+
+.separator {
+    margin: 0 8px;
+    opacity: 0.4;
+}
+
+.formation-description {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 12px 0 0 0;
+    line-height: 1.7;
+}
+
+
+/* la partie Compétences Logiciels */
+
+.compétences.logiciels h2 {
+    font-family: Didot, "Didot LT STD", serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1b4ea0;
+    font-weight: normal;
+    border-bottom: 2px solid rgba(27, 78, 160, 0.08);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+.compétences.logiciels .skills-grid {
+    list-style: none;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 240px));
+    justify-content: center;
+    gap: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+
+
+.compétences.logiciels .skill {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: rgba(255, 255, 255, 0.94);
+    transition: transform 140ms ease, box-shadow 140ms ease;
+    min-height: 58px;
+    max-width: 240px;
+    box-sizing: border-box;
+    gap: 10px;
+
+}
+
+.compétences.logiciels .skill:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.compétences.logiciels .skill-label {
+    font-family: Didot, serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 11px;
+    color: #1b4ea0;
+    margin: 0;
+
+}
+
+/* Icônes monochromes à gauche */
+.compétences.logiciels .skill-icon {
+    color: rgba(27, 78, 160, 0.95);
+    font-size: 16px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.compétences.logiciels .skill i {
+    display: inline-block;
+}
+
+.compétences.logiciels .skill-dot {
+    width: 100%;
+    height: 8px;
+    background: rgba(27, 78, 160, 0.16);
+    border-radius: 6px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* règles de niveau (la c'est pour pas que la section compétences se duplique) */
+.compétences.logiciels .skill.level-1 .skill-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 30%;
+    background: #1b4ea0;
+    border-radius: 6px;
+}
+
+/* Toutes les compétences  */
+.compétences.logiciels .skill.level-2 .skill-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: #1b4ea0;
+    border-radius: 6px;
+}
+
+.compétences.logiciels .skill.level-3 .skill-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 90%;
+    background: #1b4ea0;
+    border-radius: 6px;
+}
+
+.compétences.logiciels .skill.level-4 .skill-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 73%;
+    background: #1b4ea0;
+    border-radius: 6px;
+}
+
+.compétences.logiciels .skill.level-5 .skill-dot::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background: #1b4ea0;
+    border-radius: 6px;
+}
+
+/* Partie Compétences */
+.competences-vogue {
+    scroll-margin-top: 350px;
+    max-width: 1100px;
+    margin: 80px auto;
+    padding-bottom: 100px;
+}
+
+/* titre Compétences */
+.competences-vogue h2 {
+    font-family: Didot, "Didot LT STD", serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1b4ea0;
+    font-weight: normal;
+    border-bottom: 2px solid rgba(27, 78, 160, 0.08);
+    padding-bottom: 100px;
+    padding-top: 80px;
+    text-align: center;
+}
+
+.competences-vogue .competences-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.competences-vogue .competence-item {
+    font-family: Georgia, serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 14px;
+}
+
+.competences-vogue .level-bar {
+    height: 12px;
+    background: rgba(27, 78, 160, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.competences-vogue .level-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1b4ea0, #6ea8ff);
+    width: var(--level, 50%);
+    transition: width 600ms cubic-bezier(.2, .8, .2, 1);
+    border-radius: 8px;
+}
+
+/* Partie Expériences */
+
+.expériences-vogue h2 {
+    font-family: Didot, "Didot LT STD", serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1b4ea0;
+    margin: 0 auto 60px auto;
+    font-weight: normal;
+    border-bottom: 2px solid rgba(27, 78, 160, 0.08);
+    padding-bottom: 20px;
+    text-align: center;
+    max-width: fit-content;
+}
+
+.expériences-vogue {
+    font-family: Georgia, serif;
+    font-size: 16px;
+    line-height: 1.9;
+    color: rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, rgba(27, 78, 160, 0.02), rgba(110, 168, 255, 0.02));
+    border-left: 3px solid #1b4ea0;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.expériences-vogue .experience-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.expériences-vogue .experience-item::first-letter {
+    font-size: 4em;
+    font-weight: bold;
+    color: #1b4ea0;
+    float: left;
+    line-height: 0.8;
+    margin-right: 8px;
+    margin-top: 5px;
+    font-family: Didot, "Didot LT STD", serif;
+}
+
+/* Partie Centres d'intérêt */
+.centreinteret {
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 80px 40px;
+    background: linear-gradient(to bottom, #ffffff 0%, #f8f8f8 100%);
+    position: relative;
+    border-top: 1px solid #1b4ea0;
+    border-bottom: 1px solid #1b4ea0;
+}
+
+/* effet */
+.centreinteret::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    background: #1b4ea0;
+}
+
+.centreinteret section {
+    position: relative;
+}
+
+.centreinteret h2 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+    color: #1b4ea0;
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.centreinteret h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 1px;
+    background: #1b4ea0;
+}
+
+.centreinteret ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.centreinteret li {
+    font-size: 1.1rem;
+    line-height: 2;
+    font-style: italic;
+    margin-bottom: 35px;
+    padding-left: 50px;
+    position: relative;
+    color: #000000;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+}
+
+.centreinteret li::before {
+    content: '◆';
+    position: absolute;
+    left: 15px;
+    color: #1b4ea0;
+    font-size: 0.7rem;
+}
+
+
+/* Effet hover */
+.centreinteret li:hover {
+    padding-left: 55px;
+    transition: padding-left 0.3s ease;
+}
+
+/* Partie Contacts */
+.contacts {
+    font-family: 'Didot', 'Bodoni MT', 'Playfair Display', serif;
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 1.875rem 0.9375rem;
+    background: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.contacts::before {
+    content: 'CONTACT';
+    position: absolute;
+    top: 50%;
+    right: -180px;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 5rem;
+    font-weight: 500;
+    color: #f5f5f5;
+    letter-spacing: 0.2em;
+    z-index: 0;
+    transform-origin: center;
+}
+
+.contacts section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Titre Contacts */
+.contacts h2 {
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    color: #1b4ea0;
+    line-height: 0.9;
+    position: relative;
+    display: inline-block;
+}
+
+.contacts h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, #1b4ea0, #1f509e, #335fa6);
+}
+
+.liste-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 60px 0 0 0;
+    display: grid;
+    gap: 40px;
+}
+
+.liste-contacts li {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #000000;
+    letter-spacing: 0.01em;
+    padding: 25px 0 25px 80px;
+    position: relative;
+    border-left: 4px solid #1b4ea0;
+    transition: all 0.3s ease;
+}
+
+.liste-contacts li::before {
+    position: absolute;
+    left: 20px;
+    font-size: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.email::before {
+    content: '✦';
+    color: #000000;
+}
+
+.linkedin::before {
+    content: '✦';
+    color: #000000;
+}
+
+.tel::before {
+    content: '✦';
+    color: #000000;
+}
+
+.liste-contacts li:hover {
+    padding-left: 3.4375rem;
+    border-left-color: #1b4ea0;
+    background: linear-gradient(to right, #1b4ea0, transparent);
+}
+
+.contacts a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-family: "Garamond", "Georgia", serif;
+    font-weight: bold;
+}
+
+
+/* Bouton LinkedIn avec effet hover */
+.boutonLinkedIn {
+    position: relative;
+    padding: 0.625rem 1.25rem;
+    border: 2px solid #1b4ea0;
+    border-radius: 8px;
+    background: transparent;
+    color: #f9fafb;
+    overflow: hidden;
+    z-index: 1;
+    transition: color 0.4s ease;
+}
+
+.boutonLinkedIn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #1b4ea0, transparent);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.boutonLinkedIn:hover {
+    color: white;
+}
+
+.boutonLinkedIn:hover::before {
+    left: 0;
+}
+
+/* Barre de progression de défilement */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(to right, #1b4ea0, #0a67fb);
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.1s ease;
+    z-index: 9999;
+}
+
+/* Formulaire de contact */
+.contact-form-container {
+    background: linear-gradient(135deg, #f9f9f9, #f5f5f5);
+    padding: 1.5625rem 0.9375rem;
+    border-left: 6px solid #1b4ea0;
+}
+
+.contact-form-container h3 {
+    font-family: Didot, "Didot LT STD", serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #1b4ea0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px 20px;
+    border: 2px solid #ddd;
+    background: #fff;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #1b4ea0;
+    box-shadow: 0 0 0 3px #1b4ea0(255, 107, 107, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 18px 40px;
+    font-family: 'Helvetica Neue', 'Arial', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    align-self: flex-start;
+    clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(135deg, #1b4ea0, #0a67fb);
+    transform: translateX(5px);
+    box-shadow: -5px 5px 20px #1b4ea0(255, 107, 107, 0.3);
+}
+
+.btn-submit .arrow {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-submit:hover .arrow {
+    transform: translateX(5px);
+}
+
+/* ============================================
+   RESPONSIVE - TABLETTE ET MOBILE
+   ============================================ */
+
+/* Tablettes (max-width: 1024px) */
+@media (max-width: 1024px) {
+    main {
+        margin-top: 250px;
+    }
+
+    header.header h1 {
+        font-size: 120px;
+    }
+
+    header.header.scrolled h1 {
+        font-size: 1.5rem;
+    }
+
+    ul.sidebar {
+        gap: 20px;
+        font-size: 18px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+
+    .titre1 {
+        font-size: 50px;
+        padding-left: 20px;
+    }
+
+    .titre2 {
+        font-size: 35px;
+        padding-right: 50px;
+        margin-top: -70px;
+    }
+
+    .codeBarre {
+        width: 300px;
+    }
+
+    .présentation {
+        max-width: 90%;
+        padding: 0 20px;
+        font-size: 18px;
+    }
+
+    .formations-vogue,
+    .competences-vogue,
+    .expériences-vogue {
+        padding: 0 20px;
+        max-width: 90%;
+    }
+
+    .formations-vogue h2,
+    .competences-vogue h2,
+    .expériences-vogue h2,
+    .centreinteret h2 {
+        font-size: 2.5rem;
+    }
+
+    .competences-vogue .competences-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .compétences.logiciels .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 200px));
+        gap: 40px;
+        padding: 50px 20px;
+    }
+
+    .contacts {
+        padding: 50px 30px;
+        margin: 40px 20px;
+    }
+
+    .contacts::before {
+        font-size: 4rem;
+        right: -120px;
+    }
+
+    .contacts h2 {
+        font-size: 3.5rem;
+    }
+
+    .liste-contacts li {
+        font-size: 1.1rem;
+        padding-left: 60px;
+    }
+
+    .contact-form-container {
+        padding: 30px;
+        max-width: 100%;
+    }
+}
+
+/* responsive pour Mobiles (max-width: 768px) */
+@media (max-width: 768px) {
+    main {
+        margin-top: 200px;
+    }
+
+    header.header {
+        padding: 20px 15px;
+    }
+
+    header.header h1 {
+        font-size: 60px;
+        letter-spacing: 1px;
+    }
+
+    header.header.scrolled {
+        padding: 10px 15px;
+    }
+
+    header.header.scrolled h1 {
+        font-size: 1.2rem;
+    }
+
+    ul.sidebar {
+        flex-direction: column;
+        gap: 15px;
+        font-size: 16px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 10px 20px;
+    }
+
+    nav a:hover {
+        padding: 10px 20px;
+    }
+
+    /* Titres */
+    .titres {
+        padding: 0 15px;
+    }
+
+    .titre1 {
+        font-size: 35px;
+        padding-left: 10px;
+        margin-left: 0;
+        padding-bottom: 20px;
+    }
+
+    .titre2 {
+        font-size: 25px;
+        padding-right: 0;
+        margin-top: -20px;
+    }
+
+    .codeBarre {
+        width: 200px;
+        margin-top: 30px;
+        padding-bottom: 40px;
+    }
+
+    /* Présentation */
+    .présentation {
+        margin-top: 50px;
+        padding: 0 15px;
+        font-size: 16px;
+        scroll-margin-top: 200px;
+    }
+
+    .présentation h2 {
+        font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .journal-quote {
+        font-size: 16px;
+        padding: 1rem 0.5rem;
+    }
+
+    .journal-quote::before {
+        left: -30px;
+        top: -25px;
+    }
+
+    .journal-quote::after {
+        right: -10px;
+        bottom: -15px;
+    }
+
+    /* Formations */
+    .formations-vogue {
+        padding: 0 0.9375rem;
+        margin: 3.125rem auto;
+        scroll-margin-top: 12.5rem;
+    }
+
+    .formations-vogue h2 {
+        font-size: 2rem;
+        letter-spacing: 0.125rem;
+        margin-bottom: 2.5rem;
+    }
+
+    .formation-timeline {
+        padding-left: 2.5rem;
+    }
+
+    .formation-timeline::before {
+        left: 0.9375rem;
+    }
+
+    .timeline-marker {
+        left: -1.8125rem;
+        width: 1.125rem;
+        height: 1.125rem;
+    }
+
+    .timeline-content {
+        padding: 1.125rem 1.25rem;
+    }
+
+    .formation-title {
+        font-size: 1.125rem;
+    }
+
+    .formation-details {
+        font-size: 0.75rem;
+    }
+
+    /* Expériences */
+    .expériences-vogue {
+        padding: 1.875rem 0.9375rem;
+        margin: 3.125rem 0.625rem;
+        scroll-margin-top: 12.5rem;
+    }
+
+    .expériences-vogue h2 {
+        font-size: 2rem;
+        letter-spacing: 0.125rem;
+    }
+
+    .expériences-vogue .experience-item {
+        font-size: 0.875rem;
+    }
+
+    .expériences-vogue .experience-item::first-letter {
+        font-size: 3em;
+    }
+
+    /* Compétences */
+    .competences-vogue {
+        margin: 3.125rem auto;
+        padding: 0 0.9375rem;
+        scroll-margin-top: 12.5rem;
+    }
+
+    .competences-vogue h2 {
+        font-size: 2rem;
+        letter-spacing: 0.125rem;
+        padding-bottom: 3.125rem;
+    }
+
+    .competences-vogue .competences-grid {
+        gap: 1.25rem;
+    }
+
+    .competences-vogue .competence-item {
+        font-size: 0.8125rem;
+    }
+
+    /* Compétences Logiciels */
+    .compétences.logiciels {
+        scroll-margin-top: 12.5rem;
+    }
+
+    .compétences.logiciels h2 {
+        font-size: 2rem;
+        letter-spacing: 0.125rem;
+    }
+
+    .compétences.logiciels .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5625rem;
+        padding: 2.5rem 0.9375rem;
+    }
+
+    .compétences.logiciels .skill {
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+
+    .compétences.logiciels .skill-label {
+        font-size: 0.625rem;
+    }
+
+    /* Centre d'intérêt */
+    .centreinteret {
+        margin: 2.5rem 0.9375rem;
+        padding: 3.125rem 1.25rem;
+        scroll-margin-top: 12.5rem;
+    }
+
+    .centreinteret h2 {
+        font-size: 2rem;
+        letter-spacing: 0.1em;
+        margin-bottom: 1.875rem;
+    }
+
+    .centreinteret li {
+        font-size: 1rem;
+        padding-left: 2.1875rem;
+        margin-bottom: 1.5625rem;
+    }
+
+    .centreinteret li::before {
+        left: 0.625rem;
+    }
+
+    /* Contacts */
+    .contacts {
+        padding: 1.875rem 0.9375rem;
+        margin: 2.5rem 0.625rem;
+        scroll-margin-top: 12.5rem;
+    }
+
+    .contacts::before {
+        font-size: 3rem;
+        right: -5rem;
+    }
+
+    .contacts h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2.5rem;
+    }
+
+
+   .liste-contacts {
+        gap: 1.5625rem;
+        margin-top: 2.5rem;
+    }
+        .liste-contacts li {
+        font-size: 1rem;
+        padding: 1.25rem 0 1.25rem 3.125rem;
+    }
+
+    .liste-contacts li::before {
+        left: 0.9375rem;
+        font-size: 1.5rem;
+    }
+
+    .liste-contacts li:hover {
+        padding-left: 3.4375rem;
+    }
+
+    .boutonLinkedIn {
+        padding: 0.625rem 1.25rem;
+        font-size: 0.8rem;
+        margin-left: 0.625rem;
+    }
+
+
+    /* Formulaire de contact */
+    .contact-form-container {
+        padding: 1.5625rem 0.9375rem;
+    }
+
+    .contact-form-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.875rem
+    }
+
+    .contact-form {
+        gap: 1.25rem;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 0.75rem 0.9375rem;
+        font-size: 0.9rem;
+
+    }
+
+    .btn-submit {
+        padding: 0.9375rem 1.875rem;
+        font-size: 0.9rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Footer */
+    footer {
+        flex-direction: column;
+        gap: 1.25rem;
+        padding: 0.9375rem;
+        font-size: 0.875rem;
+    }
+
+    /* Scroll progress bar */
+    .scroll-progress {
+        height: 0.1875rem;
+    }
+
+    /* Ajustements de scroll-margin */
+    section[id] {
+        scroll-margin-top: 12.5rem;
+    }
+}
+
+/* ====== Navigation unique (desktop + mobile) ====== */
+nav.grosse-sidebar {
+    display: block;
+}
+
+ul.sidebar {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+    align-items: center;
+    margin: 1.25rem 0;
+    padding: 0;
+}
+
+ul.sidebar a {
+    color: #1b4ea0;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+nav a:hover {
+    background: #1b4ea0;
+    color: #f3efee;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* ====== Burger menu ====== */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 0.3125rem;
+    cursor: pointer;
+    padding: 10px;
+    position: fixed;
+    top: 1.25rem;
+    right: 1.25rem;
+    z-index: 1001;
+    background: rgba(243, 239, 238, 0.95);
+    border-radius: 0.25rem;
+}
+
+.burger-menu span {
+    width: 1.75rem;
+    height: 0.1875rem;
+    background: #1b4ea0;
+    border-radius: 0.125rem;
+}
+
+/* ====== Mobile ====== */
+@media (max-width: 48rem) {
+    .burger-menu {
+        display: flex;
+    }
+
+    /* Cache la nav par défaut */
+    nav.grosse-sidebar {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: linear-gradient(135deg, #f3efee 0%, #efeee9 100%);
+        box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
+
+    /* Affiche la nav quand le burger est actif */
+    nav.grosse-sidebar.active {
+        display: block;
+    }
+
+    ul.sidebar {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+    }
+
+    ul.sidebar a {
+        display: block;
+        padding: 1.125rem 1.25rem;
+        border-bottom: 0.0625rem solid rgba(27, 78, 160, 0.1);
+    }
+
+    ul.sidebar a:hover {
+        background: #1b4ea0;
+        color: #f3efee;
+    }
+
+    /* Animation burger en X */
+    .burger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(0.5rem, 0.5rem);
+    }
+
+    .burger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .burger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(0.4375rem, -0.4375rem);
+    }
+}
